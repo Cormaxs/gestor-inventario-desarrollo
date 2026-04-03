@@ -5,7 +5,7 @@ export default class AfipCredencialesService {
     async generarKeyCsr(datos, idPropietario) {
         try {
            
-            const response = await axios.post(API_BASE_URL +"certificado/generar", idPropietario,  datos );
+            const response = await axios.post(API_BASE_URL +"afip/certificado/generar", idPropietario,  datos );
             console.log("respuesta -> ", response.data);
             return response.data;
         } catch (error) {
@@ -18,7 +18,7 @@ export default class AfipCredencialesService {
     async guardarCrt(idUser, certificado) {
         try {
            
-            const response = await axios.post(API_BASE_URL +"certificado/guardar",  idUser, certificado );
+            const response = await axios.post(API_BASE_URL +"afip/certificado/guardar",  idUser, certificado );
             console.log("respuesta -> ", response.data);
             return response.data;
         } catch (error) {
@@ -30,7 +30,7 @@ export default class AfipCredencialesService {
     async obtenerTA(id, cuit, servicio) {
         try {
            console.log(id, cuit, servicio)
-            const response = await axios.post(API_BASE_URL +"ticket/acceso", { id, cuit, servicio} );
+            const response = await axios.post(API_BASE_URL +"afip/ticket/acceso", { id, cuit, servicio} );
             console.log("respuesta -> ", response.data);
             return response.data;
         } catch (error) {
@@ -41,7 +41,7 @@ export default class AfipCredencialesService {
     async obtenerTaPadron(id, cuit, servicio) {
         try {
            console.log(id, cuit, servicio)
-            const response = await axios.post(API_BASE_URL +"padron/ticket/obtener", { id, cuit, servicio} );
+            const response = await axios.post(API_BASE_URL +"afip/padron/ticket/obtener", { id, cuit, servicio} );
             console.log("respuesta -> ", response.data);
             return response.data;
         } catch (error) {
@@ -53,7 +53,7 @@ export default class AfipCredencialesService {
     async verificarAccesos(id, cuit, servicio) {
         try {
            console.log(id, cuit, servicio)
-            const response = await axios.post(API_BASE_URL +"acceso/verificar", { id, cuit, servicio} );
+            const response = await axios.post(API_BASE_URL +"afip/acceso/verificar", { id, cuit, servicio} );
             console.log("respuesta -> ", response.data);
             return response.data;
         } catch (error) {
@@ -65,7 +65,7 @@ export default class AfipCredencialesService {
     async consultarCuitAfip(id, cuit, cuitAConsultar, servicio) {
         try {
            console.log(id, cuit, cuitAConsultar, servicio)
-            const response = await axios.post(API_BASE_URL +"cuit/consultar", { id, cuit, cuitAConsultar, servicio} );
+            const response = await axios.post(API_BASE_URL +"afip/cuit/consultar", { id, cuit, cuitAConsultar, servicio} );
             console.log("respuesta -> ", response.data);
             return response.data;
         } catch (error) {
